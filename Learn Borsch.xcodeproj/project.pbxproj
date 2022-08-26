@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */; };
+		70A63FE428B8D5F000AD56F2 /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FDF28B8D5F000AD56F2 /* MenuModels.swift */; };
+		70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE028B8D5F000AD56F2 /* Extensions.swift */; };
+		70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE128B8D5F000AD56F2 /* MainView.swift */; };
+		70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */; };
+		70A63FE828B8D5F000AD56F2 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A63FE328B8D5F000AD56F2 /* menu.json */; };
+		CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */; };
+		CD8FA2BFE6BEBE243C54AAE8 /* Learn_BorschUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */; };
+		CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA90AFA676716437CE691 /* ContentView.swift */; };
+		CD8FA5893DF8D90E449D2CEC /* Learn_BorschTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */; };
+		CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */; };
+		CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */; };
+		CD8FAC68E1173B8CB0E95BED /* Learn_BorschUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD8FAB17EBA3D6FAF01C4E79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD8FA596F6FDFD1F3B323401 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD8FA8E3C026AE0732A5F7C3;
+			remoteInfo = "Learn Borsch";
+		};
+		CD8FAC233C103FD592A7D28B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD8FA596F6FDFD1F3B323401 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD8FA8E3C026AE0732A5F7C3;
+			remoteInfo = "Learn Borsch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		70A63FDF28B8D5F000AD56F2 /* MenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuModels.swift; path = ../../BorschEditor/BorschEditor/MenuModels.swift; sourceTree = "<group>"; };
+		70A63FE028B8D5F000AD56F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../BorschEditor/BorschEditor/Extensions.swift; sourceTree = "<group>"; };
+		70A63FE128B8D5F000AD56F2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../BorschEditor/BorschEditor/MainView.swift; sourceTree = "<group>"; };
+		70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeEditorView.swift; path = ../../BorschEditor/BorschEditor/CodeEditorView.swift; sourceTree = "<group>"; };
+		70A63FE328B8D5F000AD56F2 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = menu.json; path = ../../BorschEditor/BorschEditor/menu.json; sourceTree = "<group>"; };
+		CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Borsch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschTests.swift; sourceTree = "<group>"; };
+		CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschApp.swift; sourceTree = "<group>"; };
+		CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD8FA90AFA676716437CE691 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learn BorschTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD8FAD997115C7A29C93D3FA /* Learn BorschUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learn BorschUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD8FA42ADE527109EF48FA33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8FA74169326211F5524C0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8FAB71564009FF36D3E3BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD8FA58B6D71C8CC8B4321D1 /* Learn Borsch */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FA6EBA563C276504057DC /* Preview Content */,
+				CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */,
+				70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */,
+				CD8FA90AFA676716437CE691 /* ContentView.swift */,
+				70A63FE028B8D5F000AD56F2 /* Extensions.swift */,
+				70A63FE128B8D5F000AD56F2 /* MainView.swift */,
+				CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */,
+				70A63FE328B8D5F000AD56F2 /* menu.json */,
+				70A63FDF28B8D5F000AD56F2 /* MenuModels.swift */,
+			);
+			path = "Learn Borsch";
+			sourceTree = "<group>";
+		};
+		CD8FA5A5F34FC56AC861C49C = {
+			isa = PBXGroup;
+			children = (
+				CD8FAC07326CA0D62E1C6A2F /* Products */,
+				CD8FA58B6D71C8CC8B4321D1 /* Learn Borsch */,
+				CD8FAEF92FD4CFB9C16CFA49 /* Learn BorschTests */,
+				CD8FA8EF3EB4DF6EDEDABD96 /* Learn BorschUITests */,
+			);
+			sourceTree = "<group>";
+		};
+		CD8FA6EBA563C276504057DC /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CD8FA8EF3EB4DF6EDEDABD96 /* Learn BorschUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */,
+				CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */,
+			);
+			path = "Learn BorschUITests";
+			sourceTree = "<group>";
+		};
+		CD8FAC07326CA0D62E1C6A2F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */,
+				CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */,
+				CD8FAD997115C7A29C93D3FA /* Learn BorschUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD8FAEF92FD4CFB9C16CFA49 /* Learn BorschTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */,
+			);
+			path = "Learn BorschTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD8FA3FD0AC73281E81B5D38 /* Learn BorschUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD8FA3B6EC97C7E4DCC3AEB1 /* Build configuration list for PBXNativeTarget "Learn BorschUITests" */;
+			buildPhases = (
+				CD8FA88EF9E827FD056D0EB8 /* Sources */,
+				CD8FA74169326211F5524C0D /* Frameworks */,
+				CD8FA88C356027B1EF54EB4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD8FA46B2472789A061FFE28 /* PBXTargetDependency */,
+			);
+			name = "Learn BorschUITests";
+			productName = "Learn BorschUITests";
+			productReference = CD8FAD997115C7A29C93D3FA /* Learn BorschUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CD8FA6AC655C4D77462CF8F4 /* Learn BorschTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD8FA38EC09B7D543036131F /* Build configuration list for PBXNativeTarget "Learn BorschTests" */;
+			buildPhases = (
+				CD8FA9F3D1045380B3EDBA07 /* Sources */,
+				CD8FA42ADE527109EF48FA33 /* Frameworks */,
+				CD8FAEF0E21C1EA3F91F89AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD8FA281E962D5B94ADD4774 /* PBXTargetDependency */,
+			);
+			name = "Learn BorschTests";
+			productName = "Learn BorschTests";
+			productReference = CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD8FA17B63AB0FE5E6F7EC69 /* Build configuration list for PBXNativeTarget "Learn Borsch" */;
+			buildPhases = (
+				CD8FA0859437B60E12BE91BB /* Sources */,
+				CD8FAB71564009FF36D3E3BC /* Frameworks */,
+				CD8FA0F487EA4F2FB658D8A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Learn Borsch";
+			packageProductDependencies = (
+				70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */,
+			);
+			productName = "Learn Borsch";
+			productReference = CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD8FA596F6FDFD1F3B323401 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Learn Borsch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = CD8FA5A5F34FC56AC861C49C;
+			packageReferences = (
+				70A63FDC28B8D49E00AD56F2 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
+			);
+			productRefGroup = CD8FAC07326CA0D62E1C6A2F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */,
+				CD8FA6AC655C4D77462CF8F4 /* Learn BorschTests */,
+				CD8FA3FD0AC73281E81B5D38 /* Learn BorschUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD8FA0F487EA4F2FB658D8A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70A63FE828B8D5F000AD56F2 /* menu.json in Resources */,
+				CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */,
+				CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8FA88C356027B1EF54EB4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8FAEF0E21C1EA3F91F89AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD8FA0859437B60E12BE91BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */,
+				CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */,
+				70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */,
+				70A63FE428B8D5F000AD56F2 /* MenuModels.swift in Sources */,
+				70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */,
+				70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8FA88EF9E827FD056D0EB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD8FA2BFE6BEBE243C54AAE8 /* Learn_BorschUITests.swift in Sources */,
+				CD8FAC68E1173B8CB0E95BED /* Learn_BorschUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD8FA9F3D1045380B3EDBA07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD8FA5893DF8D90E449D2CEC /* Learn_BorschTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD8FA281E962D5B94ADD4774 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */;
+			targetProxy = CD8FAC233C103FD592A7D28B /* PBXContainerItemProxy */;
+		};
+		CD8FA46B2472789A061FFE28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */;
+			targetProxy = CD8FAB17EBA3D6FAF01C4E79 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CD8FA141E8ED0F18F52D70E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Learn Borsch.app/Learn Borsch";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		CD8FA3461BE3A32FA67970DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Learn Borsch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-Borsch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD8FA63DD393BF34C51A4110 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Learn Borsch";
+			};
+			name = Release;
+		};
+		CD8FA75FD7EDBAE8570E803B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Learn Borsch/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-Borsch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD8FAABDE9A322BBD9CEFE11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Learn Borsch";
+			};
+			name = Debug;
+		};
+		CD8FABF78F90D7BAC852682A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD8FACE556300BDAB0F2B7A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Learn Borsch.app/Learn Borsch";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		CD8FAD53A86DB27A011B7CA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD8FA17B63AB0FE5E6F7EC69 /* Build configuration list for PBXNativeTarget "Learn Borsch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8FA3461BE3A32FA67970DE /* Debug */,
+				CD8FA75FD7EDBAE8570E803B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD8FA38EC09B7D543036131F /* Build configuration list for PBXNativeTarget "Learn BorschTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8FA141E8ED0F18F52D70E0 /* Debug */,
+				CD8FACE556300BDAB0F2B7A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD8FA3B6EC97C7E4DCC3AEB1 /* Build configuration list for PBXNativeTarget "Learn BorschUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8FAABDE9A322BBD9CEFE11 /* Debug */,
+				CD8FA63DD393BF34C51A4110 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Learn Borsch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD8FABF78F90D7BAC852682A /* Debug */,
+				CD8FAD53A86DB27A011B7CA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		70A63FDC28B8D49E00AD56F2 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kyle-n/HighlightedTextEditor";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70A63FDC28B8D49E00AD56F2 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
+			productName = HighlightedTextEditor;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = CD8FA596F6FDFD1F3B323401 /* Project object */;
+}
