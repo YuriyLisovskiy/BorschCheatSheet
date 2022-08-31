@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7016326728BF81DF000BBE5B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016326628BF81DF000BBE5B /* SearchBar.swift */; };
 		70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */; };
-		70A63FE428B8D5F000AD56F2 /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FDF28B8D5F000AD56F2 /* MenuModels.swift */; };
+		70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */; };
 		70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE028B8D5F000AD56F2 /* Extensions.swift */; };
 		70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE128B8D5F000AD56F2 /* MainView.swift */; };
 		70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */; };
-		70A63FE828B8D5F000AD56F2 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70A63FE328B8D5F000AD56F2 /* menu.json */; };
+		70D932E228BA736500BA89C0 /* StdLib in Resources */ = {isa = PBXBuildFile; fileRef = 70D932E128BA736500BA89C0 /* StdLib */; };
+		70D932EB28BA912500BA89C0 /* StdLibraryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */; };
+		70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70D932EC28BA915F00BA89C0 /* std_library_menu.json */; };
 		CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */; };
 		CD8FA2BFE6BEBE243C54AAE8 /* Learn_BorschUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */; };
 		CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA90AFA676716437CE691 /* ContentView.swift */; };
 		CD8FA5893DF8D90E449D2CEC /* Learn_BorschTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */; };
+		CD8FA62E538BD45A1716F600 /* lang.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA72D85187AAD004F35A2 /* lang.json */; };
 		CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */; };
 		CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */; };
 		CD8FAC68E1173B8CB0E95BED /* Learn_BorschUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */; };
@@ -40,15 +44,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		70A63FDF28B8D5F000AD56F2 /* MenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuModels.swift; path = ../../BorschEditor/BorschEditor/MenuModels.swift; sourceTree = "<group>"; };
+		7016326628BF81DF000BBE5B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StdLibraryMenuModels.swift; path = ../../BorschEditor/BorschEditor/StdLibraryMenuModels.swift; sourceTree = "<group>"; };
 		70A63FE028B8D5F000AD56F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../BorschEditor/BorschEditor/Extensions.swift; sourceTree = "<group>"; };
 		70A63FE128B8D5F000AD56F2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../BorschEditor/BorschEditor/MainView.swift; sourceTree = "<group>"; };
 		70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeEditorView.swift; path = ../../BorschEditor/BorschEditor/CodeEditorView.swift; sourceTree = "<group>"; };
-		70A63FE328B8D5F000AD56F2 /* menu.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = menu.json; path = ../../BorschEditor/BorschEditor/menu.json; sourceTree = "<group>"; };
+		70D932E128BA736500BA89C0 /* StdLib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StdLib; sourceTree = "<group>"; };
+		70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdLibraryMenu.swift; sourceTree = "<group>"; };
+		70D932EC28BA915F00BA89C0 /* std_library_menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = std_library_menu.json; sourceTree = "<group>"; };
 		CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Borsch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschTests.swift; sourceTree = "<group>"; };
 		CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschApp.swift; sourceTree = "<group>"; };
 		CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CD8FA72D85187AAD004F35A2 /* lang.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lang.json; sourceTree = "<group>"; };
 		CD8FA90AFA676716437CE691 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learn BorschTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,18 +91,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD8FA252BADFD333C3170007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				70D932E128BA736500BA89C0 /* StdLib */,
+				70D932EC28BA915F00BA89C0 /* std_library_menu.json */,
+				CD8FA72D85187AAD004F35A2 /* lang.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		CD8FA58B6D71C8CC8B4321D1 /* Learn Borsch */ = {
 			isa = PBXGroup;
 			children = (
 				CD8FA6EBA563C276504057DC /* Preview Content */,
+				CD8FA252BADFD333C3170007 /* Resources */,
 				CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */,
 				70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */,
 				CD8FA90AFA676716437CE691 /* ContentView.swift */,
 				70A63FE028B8D5F000AD56F2 /* Extensions.swift */,
 				70A63FE128B8D5F000AD56F2 /* MainView.swift */,
 				CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */,
-				70A63FE328B8D5F000AD56F2 /* menu.json */,
-				70A63FDF28B8D5F000AD56F2 /* MenuModels.swift */,
+				70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */,
+				70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */,
+				7016326628BF81DF000BBE5B /* SearchBar.swift */,
 			);
 			path = "Learn Borsch";
 			sourceTree = "<group>";
@@ -212,11 +232,11 @@
 			};
 			buildConfigurationList = CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Learn Borsch" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = CD8FA5A5F34FC56AC861C49C;
 			packageReferences = (
@@ -238,9 +258,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70A63FE828B8D5F000AD56F2 /* menu.json in Resources */,
+				70D932E228BA736500BA89C0 /* StdLib in Resources */,
 				CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */,
 				CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */,
+				70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */,
+				CD8FA62E538BD45A1716F600 /* lang.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +290,9 @@
 				CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */,
 				CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */,
 				70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */,
-				70A63FE428B8D5F000AD56F2 /* MenuModels.swift in Sources */,
+				70D932EB28BA912500BA89C0 /* StdLibraryMenu.swift in Sources */,
+				70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */,
+				7016326728BF81DF000BBE5B /* SearchBar.swift in Sources */,
 				70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */,
 				70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */,
 			);

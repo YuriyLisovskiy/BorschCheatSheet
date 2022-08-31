@@ -1,0 +1,73 @@
+{
+    "title": "Стандартна бібліотека",
+    "sections": [
+      {
+        "title": "ВИПАДКОВІ ЧИСЛА",
+        "items": [
+          {
+            "source": {
+              "title": "mt19937.борщ",
+              "filename": "StdLib/випадкові_числа/mt19937.борщ",
+              "readonly": true,
+              "code": ""
+            }
+          }
+        ]
+      },
+      {
+        "title": "КОЛЕКЦІЇ",
+        "items": [
+          {
+            "source": {
+              "title": "стек.борщ",
+              "filename": "StdLib/колекції/стек.борщ",
+              "readonly": true,
+              "code": ""
+            }
+          }
+        ]
+      },
+      {
+        "title": "МАТЕМАТИКА",
+        "items": [
+          {
+            "source": {
+              "title": "константи.борщ",
+              "filename": "StdLib/математика/константи.борщ",
+              "readonly": true,
+              "code": ""
+            }
+          },
+          {
+            "source": {
+              "title": "функції.борщ",
+              "filename": "StdLib/математика/функції.борщ",
+              "readonly": true,
+              "code": ""
+            }
+          }
+        ]
+      },
+      {
+        "title": "",
+        "items": [
+          {
+            "source": {
+              "title": "помилки.борщ",
+              "filename": "StdLib/помилки.борщ",
+              "readonly": true,
+              "code": ""
+            }
+          },
+          {
+            "source": {
+              "title": "сортування.борщ",
+              "filename": "StdLib/сортування.борщ",
+              "readonly": true,
+              "code": ""
+            }
+          }
+        ]
+      }
+    ]
+}
