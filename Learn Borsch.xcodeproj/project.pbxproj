@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7016326728BF81DF000BBE5B /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016326628BF81DF000BBE5B /* SearchBar.swift */; };
+		7016326B28C0A9E4000BBE5B /* OutputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016326A28C0A9E4000BBE5B /* OutputSheet.swift */; };
 		70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */; };
 		70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */; };
 		70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE028B8D5F000AD56F2 /* Extensions.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		7016326628BF81DF000BBE5B /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		7016326A28C0A9E4000BBE5B /* OutputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSheet.swift; sourceTree = "<group>"; };
 		70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StdLibraryMenuModels.swift; path = ../../BorschEditor/BorschEditor/StdLibraryMenuModels.swift; sourceTree = "<group>"; };
 		70A63FE028B8D5F000AD56F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../BorschEditor/BorschEditor/Extensions.swift; sourceTree = "<group>"; };
 		70A63FE128B8D5F000AD56F2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../BorschEditor/BorschEditor/MainView.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */,
 				70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */,
 				7016326628BF81DF000BBE5B /* SearchBar.swift */,
+				7016326A28C0A9E4000BBE5B /* OutputSheet.swift */,
 			);
 			path = "Learn Borsch";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7016326B28C0A9E4000BBE5B /* OutputSheet.swift in Sources */,
 				CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */,
 				CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */,
 				70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */,
