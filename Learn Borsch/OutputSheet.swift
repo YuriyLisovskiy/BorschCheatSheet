@@ -1,112 +1,105 @@
 import SwiftUI
 
-struct RunResult: Identifiable, Decodable {
-    var id: String {
-        UUID().uuidString
-    }
-    
-    let error: String?
-    let output: String?
-    let exitCode: Int
-    
-    enum CodingKeys: String, CodingKey {
-        case error
-        case output
-        case exit_code
-    }
-    
-    init(error: String?, output: String?, exitCode: Int) {
-        self.error = error
-        self.output = output
-        self.exitCode = exitCode
-    }
-    
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        error = try values.decodeIfPresent(String.self, forKey: .error)
-        output = try values.decodeIfPresent(String.self, forKey: .output)
-        exitCode = try values.decode(Int.self, forKey: .exit_code)
-    }
-    
-    func makeOutput() -> String {
-        var output = ""
-        if self.output != nil {
-            output = self.output!
-        }
-        else if self.error != nil {
-            output = self.error!
-        }
-        
-        print("===")
-        print(self.id)
-        print("===")
-        
-        while output.hasSuffix("\n") {
-            output = output.dropSuffix("\n")
-        }
-        
-        return output + (self.exitCode != -99999 ? "\n\n" + "Процес завершено з кодом виходу \(self.exitCode)." : "")
-    }
-}
-
 struct OutputSheet: View {
+    @State private var showingErrorAlert = false
+    @State private var errorAlertMessage = ""
+    
     var code: String = ""
-    @State var output: String = ""
-    @State var result: RunResult?
+    @State private var consoleOutputRows: [String] = []
+    @State private var exitCode: Int64 = Int64.min
+    
+    private enum ExecutionState {
+        case Starting, Running, Finished, StartingError, RunningError
+    }
+    
+    @State private var execState: ExecutionState = ExecutionState.Starting
     
     @Environment(\.dismiss) var dismiss
     
-    public func runCode(code: String) {
-        self.result = nil
-//        guard let url = URL(string: "http://127.0.0.1:8080/run?code=\(code.toBase64())") else { return }
-        
-//        let task = URLSession.shared.dataTask(with: url) {(data: Data?, response: URLResponse?, error: Error?) in
-//            guard
-//                error == nil,
-//                let data = data
-//            else {
-//                print(error ?? "Not started.")
-//                self.result = RunResult(error: "Not started.", output: "", exitCode: -99999)
-//                return
-//            }
-//
-//            self.result = try! JSONDecoder().decode(RunResult.self, from: data)
-////                guard let data = data else { return }
-////                print(String(data: data, encoding: .utf8)!)
-//        }
-//
-//        task.resume()
-        Task {
-            guard let url = URL(string: "http://127.0.0.1:8080/run?code=\(code.toBase64())") else { return }
-            let (data, _) = try await URLSession.shared.data(from: url)
-            self.result = try JSONDecoder().decode(RunResult.self, from: data)
+    private func runCode(code: String) {
+        self.execState = ExecutionState.Starting
+        self.consoleOutputRows = []
+        self.exitCode = Int64.min
+        PlaygroundApi.createJob(langVersion: "0.1.0", sourceCode: code) { result in
+            switch result {
+            case .success(let resultObj):
+                self.execState = ExecutionState.Running
+                DispatchQueue.main.async {
+                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+                        if self.execState == ExecutionState.Running {
+                            PlaygroundApi.getOutput(jobId: resultObj.jobId, offset: self.consoleOutputRows.count) { innerResult in
+                                switch innerResult {
+                                case .success(let output):
+                                    self.consoleOutputRows.append(contentsOf: output.rows.map{ row in row.text })
+                                    if output.exitCode != nil {
+                                        self.execState = ExecutionState.Finished
+                                        self.exitCode = output.exitCode!
+                                    }
+                                case .failure(let error):
+                                    print("Request failed with error: \(error)")
+                                    self.execState = ExecutionState.RunningError
+                                    self.errorAlertMessage = error.localizedDescription
+                                    self.showingErrorAlert = true
+                                }
+                            }
+                        }
+                        else {
+                            timer.invalidate()
+                        }
+                    })
+                }
+            case .failure(let error):
+                self.execState = ExecutionState.StartingError
+                print("Request failed with error: \(error)")
+                self.errorAlertMessage = error.localizedDescription
+                self.showingErrorAlert = true
+            }
         }
     }
-    
+
     var body: some View {
         NavigationView {
             VStack {
-                if result != nil {
-                    Text(result!.makeOutput())
+                switch self.execState {
+                case .Starting:
+                    ProgressView().onAppear {
+                        self.runCode(code: self.code)
+                    }
+                    Text("Очікування запуску...")
+                case .Running, .Finished:
+                    Text(self.consoleOutputRows.joined(separator: "\n"))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                         .font(Font.body.monospaced())
-
+                    if self.execState == .Running {
+                        ProgressView()
+                    }
                     Spacer()
+                case .StartingError, .RunningError:
                     Button(action: { self.runCode(code: self.code) }) {
                         Image(systemName: "gobackward")
                             .font(Font.body.weight(.semibold))
-                        Text("Запустити знову")
-                    }
-                }
-                else {
-                    ProgressView().onAppear {
-                        self.runCode(code: self.code)
+                        Text("Повторити запуск")
                     }
                 }
             }
             .navigationBarTitle("Вивід", displayMode: .inline)
             .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    if self.execState == .Finished {
+                        Button(action: { self.runCode(code: self.code) }) {
+                            Image(systemName: "gobackward")
+                                .font(Font.body.weight(.semibold))
+                        }
+                    }
+                }
+                
+                ToolbarItem(placement: .status) {
+                    if self.execState == .Finished {
+                        Text("Програму завершено з кодом \(self.exitCode)")
+                    }
+                }
+                
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button(action: { dismiss() }) {
                         Image(systemName: "chevron.backward")
@@ -115,6 +108,12 @@ struct OutputSheet: View {
                     }
                 }
             }
+            .alert("Помилка", isPresented: $showingErrorAlert, actions: {
+                Button("Запустити знову") {
+                    self.runCode(code: self.code)
+                }
+                Button("Закрити", role: .cancel, action: {})
+            }, message: { Text(self.errorAlertMessage) })
         }
     }
 }
