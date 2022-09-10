@@ -11,6 +11,68 @@ let ApiV1Url: String = "http://0.0.0.0:8080/api/v1"
 
 struct PlaygroundApi {
     
+    enum RequestMethod {
+        case get, post, put, delete
+        
+        func toString() -> String {
+            switch self {
+            case .get:
+                return "GET"
+            case .post:
+                return "POST"
+            case .put:
+                return "PUT"
+            case .delete:
+                return "DELETE"
+            }
+        }
+    }
+    
+    private static func sendRequest(url: String, method: RequestMethod, body: Data?, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        guard let urlObj = URL(string: url) else {
+            completion(.failure(ResponseError(message: "invalid url")))
+            return
+        }
+        
+        var request = URLRequest(url: urlObj)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = method.toString()
+
+        if body != nil {
+            request.httpBody = body
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard
+                let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil
+            else {
+                completion(.failure(error ?? URLError(.badServerResponse)))
+                return
+            }
+            
+            completion(.success((response, data)))
+        }.resume()
+    }
+    
+    static func get_(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        PlaygroundApi.sendRequest(url: url, method: .get, body: nil, completion: completion)
+    }
+    
+    static func post(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        PlaygroundApi.sendRequest(url: url, method: .post, body: body, completion: completion)
+    }
+    
+    static func put(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        PlaygroundApi.sendRequest(url: url, method: .put, body: body, completion: completion)
+    }
+    
+    static func delete(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        PlaygroundApi.sendRequest(url: url, method: .delete, body: nil, completion: completion)
+    }
+    
     struct CreateJobForm: Encodable {
         var languageVersion: String
         var sourceCode: String
@@ -78,102 +140,62 @@ struct PlaygroundApi {
     }
     
     static func createJob(langVersion: String, sourceCode: String, completion: @escaping (Result<CreateJobResult, Error>) -> Void) {
-        
-        // Create URL
-        guard let url = URL(string: ApiV1Url + "/jobs") else {
-            completion(.failure(ResponseError(message: "invalid url")))
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod = "POST"
-
         let form = CreateJobForm(languageVersion: langVersion, sourceCode: sourceCode)
-        request.httpBody = try! JSONEncoder().encode(form)
-        
-        // Create URL session data task
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse,
-                error == nil
-            else {                                                               // check for fundamental networking error
-                completion(.failure(error ?? URLError(.badServerResponse)))
-                return
-            }
-            
-            // Check for http errors
-            guard (200 ... 299) ~= response.statusCode else {
+        let body = try! JSONEncoder().encode(form)
+        PlaygroundApi.post(url: ApiV1Url + "/jobs", body: body) { result in
+            switch result {
+            case .success(let obj):
+                if obj.0.statusCode != 201 {
+                    do {
+                        let decodedErr = try JSONDecoder().decode(ResponseError.self, from: obj.1!)
+                        completion(.failure(ResponseError(message: decodedErr.message)))
+                    }
+                    catch {
+                        completion(.failure(error))
+                    }
+                    
+                    return
+                }
+                
                 do {
-                    let decodedErr = try JSONDecoder().decode(ResponseError.self, from: data)
-                    completion(.failure(ResponseError(message: decodedErr.message)))
+                    let createJobResult = try JSONDecoder().decode(CreateJobResult.self, from: obj.1!)
+                    completion(.success(createJobResult))
                 }
                 catch {
                     completion(.failure(error))
                 }
-                
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                print("response = \(response)")
-                return
+            case .failure(let err):
+                completion(.failure(err))
             }
-            
-            // Parse response data
-            do {
-                let createJobResult = try JSONDecoder().decode(CreateJobResult.self, from: data)
-                completion(.success(createJobResult))
-            }
-            catch {
-                completion(.failure(error))
-            }
-        }.resume()
+        }
     }
     
     static func getOutput(jobId: String, offset: Int, completion: @escaping (Result<ResponseOutput, Error>) -> Void) {
-        // Create URL
-        guard let url = URL(string: "\(ApiV1Url)/jobs/\(jobId)/output?offset=\(offset)") else {
-            completion(.failure(ResponseError(message: "invalid url")))
-            return
-        }
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpMethod = "GET"
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse,
-                error == nil
-            else {
-                // check for fundamental networking error
-                completion(.failure(error ?? URLError(.badServerResponse)))
-                return
-            }
-            
-            guard (200 ... 299) ~= response.statusCode else {
-                // check for http errors
+        PlaygroundApi.get_(url: "\(ApiV1Url)/jobs/\(jobId)/output?offset=\(offset)") { result in
+            switch result {
+            case .success(let obj):
+                if obj.0.statusCode != 200 {
+                    do {
+                        let decodedErr = try JSONDecoder().decode(ResponseError.self, from: obj.1!)
+                        completion(.failure(ResponseError(message: decodedErr.message)))
+                    }
+                    catch {
+                        completion(.failure(error))
+                    }
+                    
+                    return
+                }
+                
                 do {
-                    let decodedErr = try JSONDecoder().decode(ResponseError.self, from: data)
-                    completion(.failure(ResponseError(message: decodedErr.message)))
+                    let outputResult = try JSONDecoder().decode(ResponseOutput.self, from: obj.1!)
+                    completion(.success(outputResult))
                 }
                 catch {
                     completion(.failure(error))
                 }
-                
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                print("response = \(response)")
-                return
+            case .failure(let err):
+                completion(.failure(err))
             }
-            
-            do {
-                let outputResult = try JSONDecoder().decode(ResponseOutput.self, from: data)
-                completion(.success(outputResult))
-            }
-            catch {
-                completion(.failure(error))
-            }
-        }.resume()
+        }
     }
 }
