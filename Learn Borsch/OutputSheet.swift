@@ -36,14 +36,47 @@ struct OutputSheet: View {
     @State private var rawOutputUrl: URL? = nil
     
     private enum ExecutionState {
-        case Starting, Running, Finished, StartingError, RunningError
+        case Initial, Starting, Running, Finished, StartingError, RunningError
     }
     
-    @State private var execState: ExecutionState = ExecutionState.Starting
+    @State private var execState: ExecutionState = .Initial
     
     @Environment(\.presentationMode) var presentationMode
     
+    private func loadOutput(jobId: String, offset: Int) {
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
+        PlaygroundApi.getOutput(jobId: jobId, offset: offset) { innerResult in
+            switch innerResult {
+            case .success(let output):
+                self.consoleOutputRows.append(contentsOf: output.rows.map{ row in row.text })
+                if output.exitCode != nil {
+                    self.execState = ExecutionState.Finished
+                    self.exitCode = output.exitCode!
+                    self.rawOutputUrl = URL(string: "\(PlaygroundApi.ApiV1)/jobs/\(jobId)/output.txt")
+                }
+            case .failure(let error):
+                print("Request failed with error: \(error)")
+                self.execState = ExecutionState.RunningError
+                self.errorAlertMessage = error.localizedDescription
+                self.showingErrorAlert = true
+            }
+            
+            dispatchGroup.leave()
+        }
+
+        dispatchGroup.notify(queue: .main) {
+            if self.execState == ExecutionState.Running {
+                self.loadOutput(jobId: jobId, offset: self.consoleOutputRows.count)
+            }
+        }
+    }
+    
     private func runCode(code: String) {
+        if self.execState == .Starting || self.execState == .Running {
+            return
+        }
+        
         self.rawOutputUrl = nil
         self.execState = ExecutionState.Starting
         self.consoleOutputRows = []
@@ -52,31 +85,18 @@ struct OutputSheet: View {
             switch result {
             case .success(let resultObj):
                 self.execState = ExecutionState.Running
-                DispatchQueue.main.async {
-                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
-                        if self.execState == ExecutionState.Running {
-                            PlaygroundApi.getOutput(jobId: resultObj.jobId, offset: self.consoleOutputRows.count) { innerResult in
-                                switch innerResult {
-                                case .success(let output):
-                                    self.consoleOutputRows.append(contentsOf: output.rows.map{ row in row.text })
-                                    if output.exitCode != nil {
-                                        self.execState = ExecutionState.Finished
-                                        self.exitCode = output.exitCode!
-                                        self.rawOutputUrl = URL(string: "\(PlaygroundApi.ApiV1)/jobs/\(resultObj.jobId)/output.txt")
-                                    }
-                                case .failure(let error):
-                                    print("Request failed with error: \(error)")
-                                    self.execState = ExecutionState.RunningError
-                                    self.errorAlertMessage = error.localizedDescription
-                                    self.showingErrorAlert = true
-                                }
-                            }
-                        }
-                        else {
-                            timer.invalidate()
-                        }
-                    })
-                }
+                self.loadOutput(jobId: resultObj.jobId, offset: self.consoleOutputRows.count)
+                
+//                DispatchQueue.main.async {
+//                    Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { timer in
+//                        if self.execState == ExecutionState.Running {
+//                            self.getOutput(jobId: resultObj.jobId, offset: self.consoleOutputRows.count)
+//                        }
+//                        else {
+//                            timer.invalidate()
+//                        }
+//                    })
+//                }
             case .failure(let error):
                 self.execState = ExecutionState.StartingError
                 print("Request failed with error: \(error)")
@@ -90,8 +110,8 @@ struct OutputSheet: View {
         NavigationView {
             VStack {
                 switch self.execState {
-                case .Starting:
-                    ProgressView("Очікуйте запуску...").onAppear {
+                case .Starting, .Initial:
+                    ProgressView("Очікування запуску...").onAppear {
                         self.runCode(code: self.code)
                     }
                 case .Running, .Finished:

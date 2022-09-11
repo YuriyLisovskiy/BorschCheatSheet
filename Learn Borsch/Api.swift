@@ -25,15 +25,17 @@ struct Network {
         }
     }
     
-    private static func request(url: String, method: RequestMethod, body: Data?, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+    private static func request(url: String, method: RequestMethod, headers: Dictionary<String, String>, body: Data?, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
         guard let urlObj = URL(string: url) else {
             completion(.failure(URLError(.badURL)))
             return
         }
         
         var request = URLRequest(url: urlObj)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        for key in headers.keys {
+            request.setValue(headers[key]!, forHTTPHeaderField: key)
+        }
+        
         request.httpMethod = method.toString()
 
         if body != nil {
@@ -54,20 +56,20 @@ struct Network {
         }.resume()
     }
     
-    static func requestGet(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        Network.request(url: url, method: .get, body: nil, completion: completion)
+    static func requestGet(url: String, headers: Dictionary<String, String>, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .get, headers: headers, body: nil, completion: completion)
     }
     
-    static func requestPost(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        Network.request(url: url, method: .post, body: body, completion: completion)
+    static func requestPost(url: String, headers: Dictionary<String, String>, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .post, headers: headers, body: body, completion: completion)
     }
     
-    static func requestPut(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        Network.request(url: url, method: .put, body: body, completion: completion)
+    static func requestPut(url: String, headers: Dictionary<String, String>, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .put, headers: headers, body: body, completion: completion)
     }
     
-    static func requestDelete(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        Network.request(url: url, method: .delete, body: nil, completion: completion)
+    static func requestDelete(url: String, headers: Dictionary<String, String>, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .delete, headers: headers, body: nil, completion: completion)
     }
 }
 
@@ -145,7 +147,10 @@ struct PlaygroundApi {
     static func createJob(langVersion: String, sourceCode: String, completion: @escaping (Result<CreateJobResult, Error>) -> Void) {
         let form = CreateJobForm(languageVersion: langVersion, sourceCode: sourceCode)
         let body = try! JSONEncoder().encode(form)
-        Network.requestPost(url: PlaygroundApi.ApiV1 + "/jobs", body: body) { result in
+        
+        let headers = ["Content-Type": "application/json",
+                      "Accept": "application/json"]
+        Network.requestPost(url: PlaygroundApi.ApiV1 + "/jobs", headers: headers, body: body) { result in
             switch result {
             case .success(let obj):
                 if obj.0.statusCode != 201 {
@@ -174,7 +179,9 @@ struct PlaygroundApi {
     }
     
     static func getOutput(jobId: String, offset: Int, completion: @escaping (Result<ResponseOutput, Error>) -> Void) {
-        Network.requestGet(url: "\(PlaygroundApi.ApiV1)/jobs/\(jobId)/output?offset=\(offset)") { result in
+        let headers = ["Content-Type": "application/json",
+                      "Accept": "application/json"]
+        Network.requestGet(url: "\(PlaygroundApi.ApiV1)/jobs/\(jobId)/output?offset=\(offset)", headers: headers) { result in
             switch result {
             case .success(let obj):
                 if obj.0.statusCode != 200 {
@@ -203,7 +210,9 @@ struct PlaygroundApi {
     }
     
     static func getLanguageVersions(completion: @escaping (Result<[String], Error>) -> Void) {
-        Network.requestGet(url: "\(PlaygroundApi.ApiV1)/lang/versions") { result in
+        let headers = ["Content-Type": "application/json",
+                      "Accept": "application/json"]
+        Network.requestGet(url: "\(PlaygroundApi.ApiV1)/lang/versions", headers: headers) { result in
             switch result {
             case .success(let obj):
                 if obj.0.statusCode != 200 {

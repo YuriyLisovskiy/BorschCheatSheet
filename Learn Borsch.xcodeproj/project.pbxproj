@@ -14,7 +14,6 @@
 		70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE028B8D5F000AD56F2 /* Extensions.swift */; };
 		70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE128B8D5F000AD56F2 /* MainView.swift */; };
 		70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */; };
-		70D932E228BA736500BA89C0 /* StdLib in Resources */ = {isa = PBXBuildFile; fileRef = 70D932E128BA736500BA89C0 /* StdLib */; };
 		70D932EB28BA912500BA89C0 /* StdLibraryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */; };
 		70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70D932EC28BA915F00BA89C0 /* std_library_menu.json */; };
 		CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */; };
@@ -51,7 +50,6 @@
 		70A63FE028B8D5F000AD56F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../BorschEditor/BorschEditor/Extensions.swift; sourceTree = "<group>"; };
 		70A63FE128B8D5F000AD56F2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../BorschEditor/BorschEditor/MainView.swift; sourceTree = "<group>"; };
 		70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeEditorView.swift; path = ../../BorschEditor/BorschEditor/CodeEditorView.swift; sourceTree = "<group>"; };
-		70D932E128BA736500BA89C0 /* StdLib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StdLib; sourceTree = "<group>"; };
 		70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdLibraryMenu.swift; sourceTree = "<group>"; };
 		70D932EC28BA915F00BA89C0 /* std_library_menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = std_library_menu.json; sourceTree = "<group>"; };
 		CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Borsch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +94,6 @@
 		CD8FA252BADFD333C3170007 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				70D932E128BA736500BA89C0 /* StdLib */,
 				70D932EC28BA915F00BA89C0 /* std_library_menu.json */,
 				CD8FA72D85187AAD004F35A2 /* lang.json */,
 			);
@@ -261,7 +258,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70D932E228BA736500BA89C0 /* StdLib in Resources */,
 				CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */,
 				CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */,
 				70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */,

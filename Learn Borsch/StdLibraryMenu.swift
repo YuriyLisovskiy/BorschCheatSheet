@@ -2,10 +2,12 @@ import SwiftUI
 
 struct SLMenuItemView: View {
     let item: SLMenuItem
+    
+    @State private var code: String = ""
 
     var body: some View {
         if item.source != nil {
-            NavigationLink(destination: CodeEditorView(sourceFile: item.source ?? SLSource())) {
+            NavigationLink(destination: CodeEditorView(sourceFile: item.source!, loadSource: true)) {
                 Image(systemName: "doc.plaintext")
                 Text(item.source?.title ?? "")
             }

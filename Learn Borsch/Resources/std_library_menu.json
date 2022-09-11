@@ -8,6 +8,7 @@
             "source": {
               "title": "mt19937.борщ",
               "filename": "StdLib/випадкові_числа/mt19937.борщ",
+              "url": "https://raw.githubusercontent.com/YuriyLisovskiy/borsch-lang/core-changes-4/Lib/випадкові_числа/mt19937.борщ",
               "readonly": true,
               "code": ""
             }
@@ -21,6 +22,7 @@
             "source": {
               "title": "стек.борщ",
               "filename": "StdLib/колекції/стек.борщ",
+              "url": "https://raw.githubusercontent.com/YuriyLisovskiy/borsch-lang/core-changes-4/Lib/колекції/стек.борщ",
               "readonly": true,
               "code": ""
             }
@@ -34,6 +36,7 @@
             "source": {
               "title": "константи.борщ",
               "filename": "StdLib/математика/константи.борщ",
+              "url": "https://raw.githubusercontent.com/YuriyLisovskiy/borsch-lang/core-changes-4/Lib/математика/константи.борщ",
               "readonly": true,
               "code": ""
             }
@@ -42,6 +45,7 @@
             "source": {
               "title": "функції.борщ",
               "filename": "StdLib/математика/функції.борщ",
+              "url": "https://raw.githubusercontent.com/YuriyLisovskiy/borsch-lang/core-changes-4/Lib/математика/функції.борщ",
               "readonly": true,
               "code": ""
             }
@@ -55,6 +59,7 @@
             "source": {
               "title": "помилки.борщ",
               "filename": "StdLib/помилки.борщ",
+              "url": "https://raw.githubusercontent.com/YuriyLisovskiy/borsch-lang/core-changes-4/Lib/помилки.борщ",
               "readonly": true,
               "code": ""
             }
@@ -63,6 +68,7 @@
             "source": {
               "title": "сортування.борщ",
               "filename": "StdLib/сортування.борщ",
+              "url": "https://raw.githubusercontent.com/YuriyLisovskiy/borsch-lang/core-changes-4/Lib/сортування.борщ",
               "readonly": true,
               "code": ""
             }
