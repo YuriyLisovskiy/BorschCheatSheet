@@ -7,11 +7,8 @@
 
 import Foundation
 
-let ApiV1Url: String = "http://0.0.0.0:8080/api/v1"
-
-struct PlaygroundApi {
-    
-    enum RequestMethod {
+struct Network {
+    public enum RequestMethod {
         case get, post, put, delete
         
         func toString() -> String {
@@ -28,9 +25,9 @@ struct PlaygroundApi {
         }
     }
     
-    private static func sendRequest(url: String, method: RequestMethod, body: Data?, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+    private static func request(url: String, method: RequestMethod, body: Data?, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
         guard let urlObj = URL(string: url) else {
-            completion(.failure(ResponseError(message: "invalid url")))
+            completion(.failure(URLError(.badURL)))
             return
         }
         
@@ -57,21 +54,27 @@ struct PlaygroundApi {
         }.resume()
     }
     
-    static func get_(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        PlaygroundApi.sendRequest(url: url, method: .get, body: nil, completion: completion)
+    static func requestGet(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .get, body: nil, completion: completion)
     }
     
-    static func post(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        PlaygroundApi.sendRequest(url: url, method: .post, body: body, completion: completion)
+    static func requestPost(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .post, body: body, completion: completion)
     }
     
-    static func put(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        PlaygroundApi.sendRequest(url: url, method: .put, body: body, completion: completion)
+    static func requestPut(url: String, body: Data, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .put, body: body, completion: completion)
     }
     
-    static func delete(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
-        PlaygroundApi.sendRequest(url: url, method: .delete, body: nil, completion: completion)
+    static func requestDelete(url: String, completion: @escaping (Result<(HTTPURLResponse, Data?), Error>) -> Void) {
+        Network.request(url: url, method: .delete, body: nil, completion: completion)
     }
+}
+
+struct PlaygroundApi {
+    
+    static let ApiHost: String = "http://0.0.0.0:8080"
+    static let ApiV1: String = "\(PlaygroundApi.ApiHost)/api/v1"
     
     struct CreateJobForm: Encodable {
         var languageVersion: String
@@ -142,7 +145,7 @@ struct PlaygroundApi {
     static func createJob(langVersion: String, sourceCode: String, completion: @escaping (Result<CreateJobResult, Error>) -> Void) {
         let form = CreateJobForm(languageVersion: langVersion, sourceCode: sourceCode)
         let body = try! JSONEncoder().encode(form)
-        PlaygroundApi.post(url: ApiV1Url + "/jobs", body: body) { result in
+        Network.requestPost(url: PlaygroundApi.ApiV1 + "/jobs", body: body) { result in
             switch result {
             case .success(let obj):
                 if obj.0.statusCode != 201 {
@@ -171,7 +174,7 @@ struct PlaygroundApi {
     }
     
     static func getOutput(jobId: String, offset: Int, completion: @escaping (Result<ResponseOutput, Error>) -> Void) {
-        PlaygroundApi.get_(url: "\(ApiV1Url)/jobs/\(jobId)/output?offset=\(offset)") { result in
+        Network.requestGet(url: "\(PlaygroundApi.ApiV1)/jobs/\(jobId)/output?offset=\(offset)") { result in
             switch result {
             case .success(let obj):
                 if obj.0.statusCode != 200 {
@@ -189,6 +192,35 @@ struct PlaygroundApi {
                 do {
                     let outputResult = try JSONDecoder().decode(ResponseOutput.self, from: obj.1!)
                     completion(.success(outputResult))
+                }
+                catch {
+                    completion(.failure(error))
+                }
+            case .failure(let err):
+                completion(.failure(err))
+            }
+        }
+    }
+    
+    static func getLanguageVersions(completion: @escaping (Result<[String], Error>) -> Void) {
+        Network.requestGet(url: "\(PlaygroundApi.ApiV1)/lang/versions") { result in
+            switch result {
+            case .success(let obj):
+                if obj.0.statusCode != 200 {
+                    do {
+                        let decodedErr = try JSONDecoder().decode(ResponseError.self, from: obj.1!)
+                        completion(.failure(ResponseError(message: decodedErr.message)))
+                    }
+                    catch {
+                        completion(.failure(error))
+                    }
+                    
+                    return
+                }
+                
+                do {
+                    let langVersionsResult = try JSONDecoder().decode([String].self, from: obj.1!)
+                    completion(.success(langVersionsResult))
                 }
                 catch {
                     completion(.failure(error))

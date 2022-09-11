@@ -1,3 +1,4 @@
+import UIKit
 import SwiftUI
 
 struct OutputSheet: View {
@@ -5,8 +6,34 @@ struct OutputSheet: View {
     @State private var errorAlertMessage = ""
     
     var code: String = ""
+    var langVersion: String = ""
+    
+    struct ShareCode: Identifiable {
+        let id = UUID()
+        let code: String
+    }
+    
+    @State private var shareCode: ShareCode?
+    @State private var isShare = false
+    
+    struct SharingViewController: UIViewControllerRepresentable {
+        @Binding var isPresenting: Bool
+        var content: () -> UIViewController
+
+        func makeUIViewController(context: Context) -> UIViewController {
+            UIViewController()
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+            if isPresenting {
+                uiViewController.present(content(), animated: true, completion: nil)
+            }
+        }
+    }
+    
     @State private var consoleOutputRows: [String] = []
     @State private var exitCode: Int64 = Int64.min
+    @State private var rawOutputUrl: URL? = nil
     
     private enum ExecutionState {
         case Starting, Running, Finished, StartingError, RunningError
@@ -14,13 +41,14 @@ struct OutputSheet: View {
     
     @State private var execState: ExecutionState = ExecutionState.Starting
     
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     
     private func runCode(code: String) {
+        self.rawOutputUrl = nil
         self.execState = ExecutionState.Starting
         self.consoleOutputRows = []
         self.exitCode = Int64.min
-        PlaygroundApi.createJob(langVersion: "0.1.0", sourceCode: code) { result in
+        PlaygroundApi.createJob(langVersion: self.langVersion, sourceCode: code) { result in
             switch result {
             case .success(let resultObj):
                 self.execState = ExecutionState.Running
@@ -34,6 +62,7 @@ struct OutputSheet: View {
                                     if output.exitCode != nil {
                                         self.execState = ExecutionState.Finished
                                         self.exitCode = output.exitCode!
+                                        self.rawOutputUrl = URL(string: "\(PlaygroundApi.ApiV1)/jobs/\(resultObj.jobId)/output.txt")
                                     }
                                 case .failure(let error):
                                     print("Request failed with error: \(error)")
@@ -62,17 +91,16 @@ struct OutputSheet: View {
             VStack {
                 switch self.execState {
                 case .Starting:
-                    ProgressView().onAppear {
+                    ProgressView("Очікуйте запуску...").onAppear {
                         self.runCode(code: self.code)
                     }
-                    Text("Очікування запуску...")
                 case .Running, .Finished:
                     Text(self.consoleOutputRows.joined(separator: "\n"))
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                         .font(Font.body.monospaced())
                     if self.execState == .Running {
-                        ProgressView()
+                        ProgressView("Виконується...")
                     }
                     Spacer()
                 case .StartingError, .RunningError:
@@ -94,6 +122,29 @@ struct OutputSheet: View {
                     }
                 }
                 
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        self.isShare = true
+                    }) {
+                        Image(systemName: "square.and.arrow.up")
+                    }
+                    .disabled(self.execState != .Finished || self.rawOutputUrl == nil)
+                    .background(SharingViewController(isPresenting: self.$isShare) {
+                        let av = UIActivityViewController(activityItems: [self.rawOutputUrl!], applicationActivities: nil)
+                         
+                         // For iPad
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            av.popoverPresentationController?.sourceView = UIView()
+                        }
+
+                        av.completionWithItemsHandler = { _, _, _, _ in
+                            self.isShare = false // required for re-open !!!
+                        }
+                        
+                        return av
+                    })
+                }
+                
                 ToolbarItem(placement: .status) {
                     if self.execState == .Finished {
                         Text("Програму завершено з кодом \(self.exitCode)")
@@ -101,10 +152,8 @@ struct OutputSheet: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: { dismiss() }) {
-                        Image(systemName: "chevron.backward")
-                            .font(Font.body.weight(.semibold))
-                        Text("Назад")
+                    Button("Закрити", role: .cancel) {
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
             }
