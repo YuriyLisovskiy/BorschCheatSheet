@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7016326B28C0A9E4000BBE5B /* OutputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016326A28C0A9E4000BBE5B /* OutputSheet.swift */; };
+		7041635728CE81BD008EF1D6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7041635628CE81BD008EF1D6 /* TutorialView.swift */; };
 		70587E7628CA14B900A90B8B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70587E7528CA14B900A90B8B /* Api.swift */; };
+		70770DF828CFB23200354FBF /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 70770DF728CFB23200354FBF /* logo.svg */; };
 		70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */; };
 		70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */; };
 		70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE028B8D5F000AD56F2 /* Extensions.swift */; };
@@ -45,7 +47,9 @@
 
 /* Begin PBXFileReference section */
 		7016326A28C0A9E4000BBE5B /* OutputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSheet.swift; sourceTree = "<group>"; };
+		7041635628CE81BD008EF1D6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		70587E7528CA14B900A90B8B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		70770DF728CFB23200354FBF /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
 		70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StdLibraryMenuModels.swift; path = ../../BorschEditor/BorschEditor/StdLibraryMenuModels.swift; sourceTree = "<group>"; };
 		70A63FE028B8D5F000AD56F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../BorschEditor/BorschEditor/Extensions.swift; sourceTree = "<group>"; };
 		70A63FE128B8D5F000AD56F2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../BorschEditor/BorschEditor/MainView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			children = (
 				70D932EC28BA915F00BA89C0 /* std_library_menu.json */,
 				CD8FA72D85187AAD004F35A2 /* lang.json */,
+				70770DF728CFB23200354FBF /* logo.svg */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 				70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */,
 				7016326A28C0A9E4000BBE5B /* OutputSheet.swift */,
 				70587E7528CA14B900A90B8B /* Api.swift */,
+				7041635628CE81BD008EF1D6 /* TutorialView.swift */,
 			);
 			path = "Learn Borsch";
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */,
 				CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */,
+				70770DF828CFB23200354FBF /* logo.svg in Resources */,
 				70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */,
 				CD8FA62E538BD45A1716F600 /* lang.json in Resources */,
 			);
@@ -294,6 +301,7 @@
 				70D932EB28BA912500BA89C0 /* StdLibraryMenu.swift in Sources */,
 				70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */,
 				70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */,
+				7041635728CE81BD008EF1D6 /* TutorialView.swift in Sources */,
 				70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
