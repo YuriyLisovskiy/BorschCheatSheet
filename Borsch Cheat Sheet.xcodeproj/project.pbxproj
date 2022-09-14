@@ -11,6 +11,8 @@
 		7041635728CE81BD008EF1D6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7041635628CE81BD008EF1D6 /* TutorialView.swift */; };
 		70587E7628CA14B900A90B8B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70587E7528CA14B900A90B8B /* Api.swift */; };
 		70770DF828CFB23200354FBF /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 70770DF728CFB23200354FBF /* logo.svg */; };
+		70770DFD28D1F27E00354FBF /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 70770DFC28D1F27E00354FBF /* Yams */; };
+		70770DFF28D1F40100354FBF /* cheatsheet.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 70770DFE28D1F40100354FBF /* cheatsheet.yaml */; };
 		70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */ = {isa = PBXBuildFile; productRef = 70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */; };
 		70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */; };
 		70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70A63FE028B8D5F000AD56F2 /* Extensions.swift */; };
@@ -19,13 +21,13 @@
 		70D932EB28BA912500BA89C0 /* StdLibraryMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */; };
 		70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */ = {isa = PBXBuildFile; fileRef = 70D932EC28BA915F00BA89C0 /* std_library_menu.json */; };
 		CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */; };
-		CD8FA2BFE6BEBE243C54AAE8 /* Learn_BorschUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */; };
+		CD8FA2BFE6BEBE243C54AAE8 /* Borsch_Cheat_SheetUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FADC66CCE9EB04BE31B7B /* Borsch_Cheat_SheetUITests.swift */; };
 		CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA90AFA676716437CE691 /* ContentView.swift */; };
-		CD8FA5893DF8D90E449D2CEC /* Learn_BorschTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */; };
+		CD8FA5893DF8D90E449D2CEC /* Borsch_Cheat_SheetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FA1A9827254097AA582AE /* Borsch_Cheat_SheetTests.swift */; };
 		CD8FA62E538BD45A1716F600 /* lang.json in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA72D85187AAD004F35A2 /* lang.json */; };
 		CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */; };
 		CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */; };
-		CD8FAC68E1173B8CB0E95BED /* Learn_BorschUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */; };
+		CD8FAC68E1173B8CB0E95BED /* Borsch_Cheat_SheetUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8FAB9EDFE1FF37A5A7C4FA /* Borsch_Cheat_SheetUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,23 +52,24 @@
 		7041635628CE81BD008EF1D6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		70587E7528CA14B900A90B8B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		70770DF728CFB23200354FBF /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
+		70770DFE28D1F40100354FBF /* cheatsheet.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = cheatsheet.yaml; sourceTree = "<group>"; };
 		70A63FDF28B8D5F000AD56F2 /* StdLibraryMenuModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StdLibraryMenuModels.swift; path = ../../BorschEditor/BorschEditor/StdLibraryMenuModels.swift; sourceTree = "<group>"; };
 		70A63FE028B8D5F000AD56F2 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../../BorschEditor/BorschEditor/Extensions.swift; sourceTree = "<group>"; };
 		70A63FE128B8D5F000AD56F2 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainView.swift; path = ../../BorschEditor/BorschEditor/MainView.swift; sourceTree = "<group>"; };
 		70A63FE228B8D5F000AD56F2 /* CodeEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeEditorView.swift; path = ../../BorschEditor/BorschEditor/CodeEditorView.swift; sourceTree = "<group>"; };
 		70D932EA28BA912500BA89C0 /* StdLibraryMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StdLibraryMenu.swift; sourceTree = "<group>"; };
 		70D932EC28BA915F00BA89C0 /* std_library_menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = std_library_menu.json; sourceTree = "<group>"; };
-		CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Borsch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschTests.swift; sourceTree = "<group>"; };
+		CD8FA198DC78FF2390A7C120 /* Borsch Cheat Sheet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Borsch Cheat Sheet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FA1A9827254097AA582AE /* Borsch_Cheat_SheetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borsch_Cheat_SheetTests.swift; sourceTree = "<group>"; };
 		CD8FA2A9FA427407BDC3F8E1 /* Learn_BorschApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschApp.swift; sourceTree = "<group>"; };
 		CD8FA4BDB4346AFA227006CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CD8FA72D85187AAD004F35A2 /* lang.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lang.json; sourceTree = "<group>"; };
 		CD8FA90AFA676716437CE691 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learn BorschTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		CD8FAD997115C7A29C93D3FA /* Learn BorschUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Learn BorschUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Learn_BorschUITests.swift; sourceTree = "<group>"; };
+		CD8FAA1AC9AC5F93047E55E8 /* Borsch Cheat SheetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borsch Cheat SheetTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FAB9EDFE1FF37A5A7C4FA /* Borsch_Cheat_SheetUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borsch_Cheat_SheetUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD8FAD997115C7A29C93D3FA /* Borsch Cheat SheetUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Borsch Cheat SheetUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD8FADC66CCE9EB04BE31B7B /* Borsch_Cheat_SheetUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Borsch_Cheat_SheetUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70770DFD28D1F27E00354FBF /* Yams in Frameworks */,
 				70A63FDE28B8D49E00AD56F2 /* HighlightedTextEditor in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,11 +105,12 @@
 				70D932EC28BA915F00BA89C0 /* std_library_menu.json */,
 				CD8FA72D85187AAD004F35A2 /* lang.json */,
 				70770DF728CFB23200354FBF /* logo.svg */,
+				70770DFE28D1F40100354FBF /* cheatsheet.yaml */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CD8FA58B6D71C8CC8B4321D1 /* Learn Borsch */ = {
+		CD8FA58B6D71C8CC8B4321D1 /* Borsch Cheat Sheet */ = {
 			isa = PBXGroup;
 			children = (
 				CD8FA6EBA563C276504057DC /* Preview Content */,
@@ -122,16 +127,16 @@
 				70587E7528CA14B900A90B8B /* Api.swift */,
 				7041635628CE81BD008EF1D6 /* TutorialView.swift */,
 			);
-			path = "Learn Borsch";
+			path = "Borsch Cheat Sheet";
 			sourceTree = "<group>";
 		};
 		CD8FA5A5F34FC56AC861C49C = {
 			isa = PBXGroup;
 			children = (
 				CD8FAC07326CA0D62E1C6A2F /* Products */,
-				CD8FA58B6D71C8CC8B4321D1 /* Learn Borsch */,
-				CD8FAEF92FD4CFB9C16CFA49 /* Learn BorschTests */,
-				CD8FA8EF3EB4DF6EDEDABD96 /* Learn BorschUITests */,
+				CD8FA58B6D71C8CC8B4321D1 /* Borsch Cheat Sheet */,
+				CD8FAEF92FD4CFB9C16CFA49 /* Borsch Cheat SheetTests */,
+				CD8FA8EF3EB4DF6EDEDABD96 /* Borsch Cheat SheetUITests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,39 +148,39 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CD8FA8EF3EB4DF6EDEDABD96 /* Learn BorschUITests */ = {
+		CD8FA8EF3EB4DF6EDEDABD96 /* Borsch Cheat SheetUITests */ = {
 			isa = PBXGroup;
 			children = (
-				CD8FADC66CCE9EB04BE31B7B /* Learn_BorschUITests.swift */,
-				CD8FAB9EDFE1FF37A5A7C4FA /* Learn_BorschUITestsLaunchTests.swift */,
+				CD8FADC66CCE9EB04BE31B7B /* Borsch_Cheat_SheetUITests.swift */,
+				CD8FAB9EDFE1FF37A5A7C4FA /* Borsch_Cheat_SheetUITestsLaunchTests.swift */,
 			);
-			path = "Learn BorschUITests";
+			path = "Borsch Cheat SheetUITests";
 			sourceTree = "<group>";
 		};
 		CD8FAC07326CA0D62E1C6A2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */,
-				CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */,
-				CD8FAD997115C7A29C93D3FA /* Learn BorschUITests.xctest */,
+				CD8FA198DC78FF2390A7C120 /* Borsch Cheat Sheet.app */,
+				CD8FAA1AC9AC5F93047E55E8 /* Borsch Cheat SheetTests.xctest */,
+				CD8FAD997115C7A29C93D3FA /* Borsch Cheat SheetUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CD8FAEF92FD4CFB9C16CFA49 /* Learn BorschTests */ = {
+		CD8FAEF92FD4CFB9C16CFA49 /* Borsch Cheat SheetTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD8FA1A9827254097AA582AE /* Learn_BorschTests.swift */,
+				CD8FA1A9827254097AA582AE /* Borsch_Cheat_SheetTests.swift */,
 			);
-			path = "Learn BorschTests";
+			path = "Borsch Cheat SheetTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD8FA3FD0AC73281E81B5D38 /* Learn BorschUITests */ = {
+		CD8FA3FD0AC73281E81B5D38 /* Borsch Cheat SheetUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD8FA3B6EC97C7E4DCC3AEB1 /* Build configuration list for PBXNativeTarget "Learn BorschUITests" */;
+			buildConfigurationList = CD8FA3B6EC97C7E4DCC3AEB1 /* Build configuration list for PBXNativeTarget "Borsch Cheat SheetUITests" */;
 			buildPhases = (
 				CD8FA88EF9E827FD056D0EB8 /* Sources */,
 				CD8FA74169326211F5524C0D /* Frameworks */,
@@ -186,14 +191,14 @@
 			dependencies = (
 				CD8FA46B2472789A061FFE28 /* PBXTargetDependency */,
 			);
-			name = "Learn BorschUITests";
+			name = "Borsch Cheat SheetUITests";
 			productName = "Learn BorschUITests";
-			productReference = CD8FAD997115C7A29C93D3FA /* Learn BorschUITests.xctest */;
+			productReference = CD8FAD997115C7A29C93D3FA /* Borsch Cheat SheetUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		CD8FA6AC655C4D77462CF8F4 /* Learn BorschTests */ = {
+		CD8FA6AC655C4D77462CF8F4 /* Borsch Cheat SheetTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD8FA38EC09B7D543036131F /* Build configuration list for PBXNativeTarget "Learn BorschTests" */;
+			buildConfigurationList = CD8FA38EC09B7D543036131F /* Build configuration list for PBXNativeTarget "Borsch Cheat SheetTests" */;
 			buildPhases = (
 				CD8FA9F3D1045380B3EDBA07 /* Sources */,
 				CD8FA42ADE527109EF48FA33 /* Frameworks */,
@@ -204,14 +209,14 @@
 			dependencies = (
 				CD8FA281E962D5B94ADD4774 /* PBXTargetDependency */,
 			);
-			name = "Learn BorschTests";
+			name = "Borsch Cheat SheetTests";
 			productName = "Learn BorschTests";
-			productReference = CD8FAA1AC9AC5F93047E55E8 /* Learn BorschTests.xctest */;
+			productReference = CD8FAA1AC9AC5F93047E55E8 /* Borsch Cheat SheetTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */ = {
+		CD8FA8E3C026AE0732A5F7C3 /* Borsch Cheat Sheet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD8FA17B63AB0FE5E6F7EC69 /* Build configuration list for PBXNativeTarget "Learn Borsch" */;
+			buildConfigurationList = CD8FA17B63AB0FE5E6F7EC69 /* Build configuration list for PBXNativeTarget "Borsch Cheat Sheet" */;
 			buildPhases = (
 				CD8FA0859437B60E12BE91BB /* Sources */,
 				CD8FAB71564009FF36D3E3BC /* Frameworks */,
@@ -221,12 +226,13 @@
 			);
 			dependencies = (
 			);
-			name = "Learn Borsch";
+			name = "Borsch Cheat Sheet";
 			packageProductDependencies = (
 				70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */,
+				70770DFC28D1F27E00354FBF /* Yams */,
 			);
 			productName = "Learn Borsch";
-			productReference = CD8FA198DC78FF2390A7C120 /* Learn Borsch.app */;
+			productReference = CD8FA198DC78FF2390A7C120 /* Borsch Cheat Sheet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -236,7 +242,7 @@
 			isa = PBXProject;
 			attributes = {
 			};
-			buildConfigurationList = CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Learn Borsch" */;
+			buildConfigurationList = CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Borsch Cheat Sheet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -247,14 +253,15 @@
 			mainGroup = CD8FA5A5F34FC56AC861C49C;
 			packageReferences = (
 				70A63FDC28B8D49E00AD56F2 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */,
+				70770DFB28D1F27E00354FBF /* XCRemoteSwiftPackageReference "Yams" */,
 			);
 			productRefGroup = CD8FAC07326CA0D62E1C6A2F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */,
-				CD8FA6AC655C4D77462CF8F4 /* Learn BorschTests */,
-				CD8FA3FD0AC73281E81B5D38 /* Learn BorschUITests */,
+				CD8FA8E3C026AE0732A5F7C3 /* Borsch Cheat Sheet */,
+				CD8FA6AC655C4D77462CF8F4 /* Borsch Cheat SheetTests */,
+				CD8FA3FD0AC73281E81B5D38 /* Borsch Cheat SheetUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,6 +274,7 @@
 				CD8FA6BAFE52285DD22D3237 /* Assets.xcassets in Resources */,
 				CD8FA90D532A9C2222BEFB6F /* Preview Assets.xcassets in Resources */,
 				70770DF828CFB23200354FBF /* logo.svg in Resources */,
+				70770DFF28D1F40100354FBF /* cheatsheet.yaml in Resources */,
 				70D932ED28BA915F00BA89C0 /* std_library_menu.json in Resources */,
 				CD8FA62E538BD45A1716F600 /* lang.json in Resources */,
 			);
@@ -310,8 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8FA2BFE6BEBE243C54AAE8 /* Learn_BorschUITests.swift in Sources */,
-				CD8FAC68E1173B8CB0E95BED /* Learn_BorschUITestsLaunchTests.swift in Sources */,
+				CD8FA2BFE6BEBE243C54AAE8 /* Borsch_Cheat_SheetUITests.swift in Sources */,
+				CD8FAC68E1173B8CB0E95BED /* Borsch_Cheat_SheetUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,7 +327,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD8FA5893DF8D90E449D2CEC /* Learn_BorschTests.swift in Sources */,
+				CD8FA5893DF8D90E449D2CEC /* Borsch_Cheat_SheetTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,12 +336,12 @@
 /* Begin PBXTargetDependency section */
 		CD8FA281E962D5B94ADD4774 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */;
+			target = CD8FA8E3C026AE0732A5F7C3 /* Borsch Cheat Sheet */;
 			targetProxy = CD8FAC233C103FD592A7D28B /* PBXContainerItemProxy */;
 		};
 		CD8FA46B2472789A061FFE28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CD8FA8E3C026AE0732A5F7C3 /* Learn Borsch */;
+			target = CD8FA8E3C026AE0732A5F7C3 /* Borsch Cheat Sheet */;
 			targetProxy = CD8FAB17EBA3D6FAF01C4E79 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -342,15 +350,15 @@
 		CD8FA141E8ED0F18F52D70E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Learn Borsch.app/Learn Borsch";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Borsch Cheat Sheet.app/Borsch Cheat Sheet";
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-SheetTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Debug;
@@ -361,7 +369,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Learn Borsch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Borsch Cheat Sheet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -374,11 +382,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-Borsch";
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,12 +396,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-SheetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Learn Borsch";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = "Borsch Cheat Sheet";
 			};
 			name = Release;
 		};
@@ -403,7 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Learn Borsch/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Borsch Cheat Sheet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -416,11 +424,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-Borsch";
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -430,12 +438,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-SheetUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Learn Borsch";
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = "Borsch Cheat Sheet";
 			};
 			name = Debug;
 		};
@@ -503,15 +511,15 @@
 		CD8FACE556300BDAB0F2B7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Learn Borsch.app/Learn Borsch";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Borsch Cheat Sheet.app/Borsch Cheat Sheet";
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Learn-BorschTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-SheetTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
 			name = Release;
@@ -574,7 +582,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD8FA17B63AB0FE5E6F7EC69 /* Build configuration list for PBXNativeTarget "Learn Borsch" */ = {
+		CD8FA17B63AB0FE5E6F7EC69 /* Build configuration list for PBXNativeTarget "Borsch Cheat Sheet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD8FA3461BE3A32FA67970DE /* Debug */,
@@ -583,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD8FA38EC09B7D543036131F /* Build configuration list for PBXNativeTarget "Learn BorschTests" */ = {
+		CD8FA38EC09B7D543036131F /* Build configuration list for PBXNativeTarget "Borsch Cheat SheetTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD8FA141E8ED0F18F52D70E0 /* Debug */,
@@ -592,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD8FA3B6EC97C7E4DCC3AEB1 /* Build configuration list for PBXNativeTarget "Learn BorschUITests" */ = {
+		CD8FA3B6EC97C7E4DCC3AEB1 /* Build configuration list for PBXNativeTarget "Borsch Cheat SheetUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD8FAABDE9A322BBD9CEFE11 /* Debug */,
@@ -601,7 +609,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Learn Borsch" */ = {
+		CD8FAACF4F4CE56D7989E57B /* Build configuration list for PBXProject "Borsch Cheat Sheet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD8FABF78F90D7BAC852682A /* Debug */,
@@ -613,6 +621,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		70770DFB28D1F27E00354FBF /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		70A63FDC28B8D49E00AD56F2 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kyle-n/HighlightedTextEditor";
@@ -624,6 +640,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		70770DFC28D1F27E00354FBF /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 70770DFB28D1F27E00354FBF /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
 		70A63FDD28B8D49E00AD56F2 /* HighlightedTextEditor */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 70A63FDC28B8D49E00AD56F2 /* XCRemoteSwiftPackageReference "HighlightedTextEditor" */;
