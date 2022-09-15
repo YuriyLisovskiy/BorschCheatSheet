@@ -49,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		7016326A28C0A9E4000BBE5B /* OutputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSheet.swift; sourceTree = "<group>"; };
+		70217D2728D347DB00D39A1A /* Borsch-Cheat-Sheet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Borsch-Cheat-Sheet-Info.plist"; sourceTree = SOURCE_ROOT; };
 		7041635628CE81BD008EF1D6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		70587E7528CA14B900A90B8B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		70770DF728CFB23200354FBF /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
@@ -113,6 +114,7 @@
 		CD8FA58B6D71C8CC8B4321D1 /* Borsch Cheat Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				70217D2728D347DB00D39A1A /* Borsch-Cheat-Sheet-Info.plist */,
 				CD8FA6EBA563C276504057DC /* Preview Content */,
 				CD8FA252BADFD333C3170007 /* Resources */,
 				CD8FA99E5ED5D7C5980DA599 /* Assets.xcassets */,
@@ -372,9 +374,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Borsch Cheat Sheet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Borsch-Cheat-Sheet-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -414,9 +417,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Borsch Cheat Sheet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Borsch-Cheat-Sheet-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchView;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

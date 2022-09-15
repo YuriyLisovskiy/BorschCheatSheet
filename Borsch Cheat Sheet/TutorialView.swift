@@ -115,6 +115,14 @@ struct TutorialView: View {
         let contents: [ContentModel]?
         let pages: [PageModel]?
         let sections: [SectionModel]?
+        
+        var finished: Bool {
+            get {
+                false
+            }
+            set(newFinished) {
+            }
+        }
     }
 
     struct ContentModel: Decodable, Identifiable {
@@ -145,7 +153,7 @@ struct TutorialView: View {
         var body: some View {
             if self.page.contents != nil {
                 ScrollView {
-                    VStack(alignment: .leading, spacing: 20) {
+                    VStack(spacing: 20) {
                         ForEach(self.page.contents!) { contentItem in
                             PageContentView(content: contentItem)
                         }
