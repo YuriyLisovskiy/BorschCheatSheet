@@ -72,7 +72,7 @@ struct CodePreviewView: View {
             }
             .overlay(alignment: .bottom) {
                 Button("Відкрити редактор") {
-                    self.showingEditor.toggle()
+                    self.showingEditor = true
                 }
                 .buttonStyle(.borderedProminent)
                 .padding()
@@ -83,7 +83,7 @@ struct CodePreviewView: View {
                         .toolbar {
                             ToolbarItem(placement: .navigationBarLeading) {
                                 Button("Закрити") {
-                                    self.showingEditor.toggle()
+                                    self.showingEditor = false
                                 }
                             }
                         }
@@ -95,11 +95,16 @@ struct CodePreviewView: View {
 }
 
 struct TutorialView: View {
-    let sections = Bundle.main.decodeYaml([SectionModel].self, from: "cheatsheet.yaml")
+    let sections: [SectionModel]
 
+    init() {
+        self.sections = Bundle.main.decodeYaml([SectionModel].self, from: "cheatsheet.yaml")
+        print("Read \(self.sections.count) items")
+    }
+    
     struct SectionModel: Decodable, Identifiable {
-        var id: UUID {
-            UUID()
+        var id: String {
+            title
         }
         
         let title: String
@@ -107,8 +112,8 @@ struct TutorialView: View {
     }
     
     struct PageModel: Decodable, Identifiable {
-        var id: UUID {
-            UUID()
+        var id: String {
+            title
         }
         
         let title: String
@@ -125,11 +130,7 @@ struct TutorialView: View {
         }
     }
 
-    struct ContentModel: Decodable, Identifiable {
-        var id: UUID {
-            UUID()
-        }
-        
+    struct ContentModel: Decodable {
         let type: String
         let text: String
         let previewHeight: Int?
@@ -141,7 +142,8 @@ struct TutorialView: View {
         var body: some View {
             ForEach(self.section.pages) { pageItem in
                 NavigationLink(pageItem.title) {
-                    PageView(page: pageItem).navigationBarTitle(pageItem.title)
+                    PageView(page: pageItem)
+                        .navigationBarTitle(pageItem.title)
                 }
             }
         }
@@ -154,7 +156,7 @@ struct TutorialView: View {
             if self.page.contents != nil {
                 ScrollView {
                     VStack(spacing: 20) {
-                        ForEach(self.page.contents!) { contentItem in
+                        ForEach(Array(self.page.contents!.enumerated()), id: \.offset) { _, contentItem in
                             PageContentView(content: contentItem)
                         }
                     }
@@ -189,6 +191,10 @@ struct TutorialView: View {
         
         @State private var showingEditor: Bool = false
         
+        private var codePreviewHeight: CGFloat {
+            CGFloat(self.content.previewHeight ?? 120)
+        }
+        
         var body: some View {
             switch self.content.type {
             case "text", "title":
@@ -199,17 +205,15 @@ struct TutorialView: View {
                 Divider()
             case "code":
                 CodePreviewView(text: self.content.text)
-                    .frame(height: CGFloat(self.content.previewHeight ?? 120))
+                    .frame(height: self.codePreviewHeight)
                     .cornerRadius(5)
                     .padding(.horizontal)
             case "note":
                 HStack {
                     Image(systemName: "info.circle")
-//                        .font(.body.bold())
                         .padding(.leading)
                     Text(self.content.text.toMarkdown())
                         .frame(maxWidth: .infinity, alignment: .leading)
-//                        .font(.body.bold())
                         .padding(.vertical)
                         .padding(.trailing)
                 }

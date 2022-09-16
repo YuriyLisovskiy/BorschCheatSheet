@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7016326B28C0A9E4000BBE5B /* OutputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7016326A28C0A9E4000BBE5B /* OutputSheet.swift */; };
+		70217D2928D3BE1000D39A1A /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70217D2828D3BE1000D39A1A /* EditorView.swift */; };
+		70217D2B28D3BEDA00D39A1A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70217D2A28D3BEDA00D39A1A /* HomeView.swift */; };
 		7041635728CE81BD008EF1D6 /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7041635628CE81BD008EF1D6 /* TutorialView.swift */; };
 		70587E7628CA14B900A90B8B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70587E7528CA14B900A90B8B /* Api.swift */; };
 		70770DF828CFB23200354FBF /* logo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 70770DF728CFB23200354FBF /* logo.svg */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		7016326A28C0A9E4000BBE5B /* OutputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputSheet.swift; sourceTree = "<group>"; };
 		70217D2728D347DB00D39A1A /* Borsch-Cheat-Sheet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Borsch-Cheat-Sheet-Info.plist"; sourceTree = SOURCE_ROOT; };
+		70217D2828D3BE1000D39A1A /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		70217D2A28D3BEDA00D39A1A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7041635628CE81BD008EF1D6 /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		70587E7528CA14B900A90B8B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		70770DF728CFB23200354FBF /* logo.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = logo.svg; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				7016326A28C0A9E4000BBE5B /* OutputSheet.swift */,
 				70587E7528CA14B900A90B8B /* Api.swift */,
 				7041635628CE81BD008EF1D6 /* TutorialView.swift */,
+				70217D2828D3BE1000D39A1A /* EditorView.swift */,
+				70217D2A28D3BEDA00D39A1A /* HomeView.swift */,
 			);
 			path = "Borsch Cheat Sheet";
 			sourceTree = "<group>";
@@ -305,12 +311,14 @@
 			files = (
 				70587E7628CA14B900A90B8B /* Api.swift in Sources */,
 				7016326B28C0A9E4000BBE5B /* OutputSheet.swift in Sources */,
+				70217D2928D3BE1000D39A1A /* EditorView.swift in Sources */,
 				CD8FA08296E9B85B628016BC /* Learn_BorschApp.swift in Sources */,
 				CD8FA2F3F9B5F5B8A183062F /* ContentView.swift in Sources */,
 				70A63FE728B8D5F000AD56F2 /* CodeEditorView.swift in Sources */,
 				70D932EB28BA912500BA89C0 /* StdLibraryMenu.swift in Sources */,
 				70A63FE428B8D5F000AD56F2 /* StdLibraryMenuModels.swift in Sources */,
 				70A63FE628B8D5F000AD56F2 /* MainView.swift in Sources */,
+				70217D2B28D3BEDA00D39A1A /* HomeView.swift in Sources */,
 				7041635728CE81BD008EF1D6 /* TutorialView.swift in Sources */,
 				70A63FE528B8D5F000AD56F2 /* Extensions.swift in Sources */,
 			);
@@ -370,8 +378,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Borsch Cheat Sheet/Preview Content\"";
+				DEVELOPMENT_TEAM = RKX3P7AFTN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Borsch-Cheat-Sheet-Info.plist";
@@ -387,6 +398,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -413,8 +425,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Borsch Cheat Sheet/Preview Content\"";
+				DEVELOPMENT_TEAM = RKX3P7AFTN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Borsch-Cheat-Sheet-Info.plist";
@@ -430,6 +445,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "BobrTech.Borsch-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

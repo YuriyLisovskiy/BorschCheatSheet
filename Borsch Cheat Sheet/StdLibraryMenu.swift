@@ -46,7 +46,11 @@ struct StdLibraryMenuView: View {
     let menu = Bundle.main.decodeJson(SLMenu.self, from: "std_library_menu.json")
 
     var body: some View {
-        SLMenuView(menu: menu)
+//        NavigationView {
+            SLMenuView(menu: menu)
+//                .navigationBarTitle("Стандартні пакети")
+//        }
+//        .phoneOnlyStackNavigationView()
     }
 }
 
